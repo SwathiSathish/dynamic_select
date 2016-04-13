@@ -1,0 +1,9 @@
+<% @orders.each do |order| %>
+
+	<%= order.country_code %><br/>
+	<%= order.subregion_code %>
+
+    
+<% end %>
+
+<%= link_to 'Back', new_order_path %>

@@ -1,0 +1,14 @@
+<h1>New order address</h1>
+<%= form_for @order do |f| %>
+  <div class="field">
+    <%= f.label :country_code %><br>
+    <%= f.country_select :country_code, priority: %w(US CA), prompt: 'Please select a country' %>
+  </div>
+  <div class="field">
+    <%= f.label :subregion_code %><br>
+    <%= render 'subregion_select', parent_region: f.object.country_code %>
+  </div>
+  <div>
+   <%= f.submit %>
+  </div>
+<% end %>
